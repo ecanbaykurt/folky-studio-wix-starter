@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { VentureCard } from "@/components/VentureCard";
+import { MusicControls } from "@/components/MusicControls";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const ventures = [
@@ -44,15 +45,27 @@ const ventures = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <MusicControls />
+      
       {/* Hero Section */}
-      <section 
-        className="relative flex min-h-screen items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+          poster={heroBg}
+        >
+          <source
+            src="https://cdn.coverr.co/videos/coverr-abstract-digital-network-5361/1080p.mp4"
+            type="video/mp4"
+          />
+          {/* Fallback to image if video doesn't load */}
+          <img src={heroBg} alt="Hero background" className="h-full w-full object-cover" />
+        </video>
+        
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
         
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
