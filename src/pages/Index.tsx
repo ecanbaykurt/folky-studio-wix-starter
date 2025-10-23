@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { VentureCard } from "@/components/VentureCard";
 import { MusicControls } from "@/components/MusicControls";
@@ -42,7 +43,26 @@ const ventures = [
   },
 ];
 
+const headlines = [
+  "Folky Studio",
+  "AI ML Innovation",
+  "Tech for Good",
+  "Building the Future",
+  "Smart Solutions",
+  "Data-Driven Impact"
+];
+
 const Index = () => {
+  const [currentHeadline, setCurrentHeadline] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeadline((prev) => (prev + 1) % headlines.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <MusicControls />
@@ -71,7 +91,9 @@ const Index = () => {
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <div className="animate-float">
             <h1 className="mb-6 text-6xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl">
-              <span className="gradient-text">Folky Studio</span>
+              <span className="gradient-text transition-all duration-500 animate-fade-in" key={currentHeadline}>
+                {headlines[currentHeadline]}
+              </span>
             </h1>
             <p className="mb-4 text-2xl font-semibold text-primary md:text-3xl">
               Innovate IO Bootcamp
