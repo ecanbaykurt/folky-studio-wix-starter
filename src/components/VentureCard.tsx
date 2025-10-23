@@ -11,10 +11,10 @@ interface VentureCardProps {
 export const VentureCard = ({ name, headline, description, color }: VentureCardProps) => {
   return (
     <Card 
-      className="group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20"
+      className="group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/50"
     >
       <div 
-        className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-10"
+        className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-20"
         style={{ 
           background: `radial-gradient(circle at 50% 50%, ${color}, transparent 70%)` 
         }}
@@ -22,7 +22,7 @@ export const VentureCard = ({ name, headline, description, color }: VentureCardP
       
       <div className="relative p-6">
         <div 
-          className="mb-4 inline-block rounded-lg px-3 py-1 text-sm font-semibold transition-all duration-300"
+          className="mb-4 inline-block rounded-lg px-3 py-1 text-sm font-semibold transition-all duration-300 font-orbitron"
           style={{ 
             backgroundColor: `${color}20`,
             color: color,
@@ -31,7 +31,7 @@ export const VentureCard = ({ name, headline, description, color }: VentureCardP
           {name}
         </div>
         
-        <h3 className="mb-3 text-xl font-bold text-foreground">
+        <h3 className="mb-3 text-xl font-bold text-foreground font-orbitron">
           {headline}
         </h3>
         

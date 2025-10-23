@@ -98,7 +98,7 @@ const Index = () => {
                 {headlines[currentHeadline].text}
               </span>
             </h1>
-            <p className="mb-4 text-2xl font-semibold text-primary md:text-3xl">
+            <p className="mb-4 text-2xl font-semibold text-primary md:text-3xl font-orbitron">
               Innovate IO Bootcamp
             </p>
           </div>
@@ -122,8 +122,8 @@ const Index = () => {
       {/* About Section */}
       <section className="relative py-24 px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-            About <span className="gradient-text">Folky Studio</span>
+          <h2 className="mb-6 text-4xl font-bold md:text-5xl font-orbitron">
+            About <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Folky Studio</span>
           </h2>
           
           <p className="text-lg text-muted-foreground leading-relaxed md:text-xl">
@@ -137,8 +137,8 @@ const Index = () => {
       {/* Ventures Section */}
       <section className="relative py-24 px-6">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-4 text-center text-4xl font-bold md:text-5xl">
-            Our <span className="gradient-text">Ventures</span>
+          <h2 className="mb-4 text-center text-4xl font-bold md:text-5xl font-orbitron">
+            Our <span className="bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-500 bg-clip-text text-transparent">Ventures</span>
           </h2>
           <p className="mb-16 text-center text-lg text-muted-foreground">
             Innovative solutions across multiple domains
@@ -155,9 +155,9 @@ const Index = () => {
       {/* CTA Section */}
       <section className="relative py-24 px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="glass-effect rounded-3xl p-12 shadow-2xl">
-            <h2 className="mb-6 text-4xl font-bold md:text-5xl">
-              Join the <span className="gradient-text">Innovate IO</span> Movement
+          <div className="glass-effect rounded-3xl p-12 shadow-2xl border border-purple-500/20">
+            <h2 className="mb-6 text-4xl font-bold md:text-5xl font-orbitron">
+              Join the <span className="bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 bg-clip-text text-transparent">Innovate IO</span> Movement
             </h2>
             
             <p className="mb-10 text-lg text-muted-foreground md:text-xl">
@@ -168,7 +168,7 @@ const Index = () => {
             <Button 
               variant="hero"
               size="lg"
-              className="text-lg font-semibold px-12 py-6 h-auto"
+              className="text-lg font-semibold px-12 py-6 h-auto bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600"
             >
               Get in Touch
             </Button>
@@ -180,7 +180,7 @@ const Index = () => {
       <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm py-12 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 text-center">
-            <h3 className="mb-2 text-2xl font-bold gradient-text">
+            <h3 className="mb-2 text-2xl font-bold font-orbitron bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Stay Connected
             </h3>
             <p className="text-muted-foreground">
