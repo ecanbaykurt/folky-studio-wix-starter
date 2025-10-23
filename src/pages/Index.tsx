@@ -44,12 +44,12 @@ const ventures = [
 ];
 
 const headlines = [
-  "Folky Studio",
-  "AI ML Innovation",
-  "Tech for Good",
-  "Building the Future",
-  "Smart Solutions",
-  "Data-Driven Impact"
+  { text: "Folky Studio", gradient: "from-purple-400 via-pink-500 to-red-500" },
+  { text: "AI ML Innovation", gradient: "from-blue-400 via-cyan-500 to-teal-500" },
+  { text: "Tech for Good", gradient: "from-green-400 via-emerald-500 to-lime-500" },
+  { text: "Building the Future", gradient: "from-orange-400 via-amber-500 to-yellow-500" },
+  { text: "Smart Solutions", gradient: "from-indigo-400 via-purple-500 to-pink-500" },
+  { text: "Data-Driven Impact", gradient: "from-rose-400 via-fuchsia-500 to-violet-500" }
 ];
 
 const Index = () => {
@@ -90,9 +90,12 @@ const Index = () => {
         
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <div className="animate-float">
-            <h1 className="mb-6 text-6xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl">
-              <span className="gradient-text transition-all duration-500 animate-fade-in" key={currentHeadline}>
-                {headlines[currentHeadline]}
+            <h1 className="mb-6 text-6xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl font-orbitron">
+              <span 
+                className={`bg-gradient-to-r ${headlines[currentHeadline].gradient} bg-clip-text text-transparent transition-all duration-500 animate-fade-in`}
+                key={currentHeadline}
+              >
+                {headlines[currentHeadline].text}
               </span>
             </h1>
             <p className="mb-4 text-2xl font-semibold text-primary md:text-3xl">
