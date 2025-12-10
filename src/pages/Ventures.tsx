@@ -12,6 +12,7 @@ const ventures = [
     fullDescription: "SunnySett is our flagship AI platform that democratizes access to machine learning. We provide a curated marketplace of pre-trained models spanning computer vision, NLP, time-series forecasting, and more. Users can fine-tune models with their own data through an intuitive no-code interface, deploy instantly to cloud or edge devices, and scale seamlessly. Our mission: make cutting-edge AI accessible to every business, regardless of their technical expertise.",
     features: ["Model Marketplace", "No-Code Fine-Tuning", "One-Click Deployment", "Edge & Cloud Support", "API Integration"],
     icon: "🤖",
+    website: "https://sunnyset.com",
   },
   {
     name: "Safe Structure",
@@ -142,7 +143,7 @@ const Ventures = () => {
                 </div>
 
                 {/* Stats/CTA */}
-                <div className="pt-4">
+                <div className="pt-4 flex gap-4 flex-wrap">
                   <Button 
                     variant="outline" 
                     className="font-orbitron border-2 hover:scale-105 transition-transform"
@@ -150,6 +151,17 @@ const Ventures = () => {
                   >
                     Learn More About {venture.name}
                   </Button>
+                  {venture.website && (
+                    <a href={venture.website} target="_blank" rel="noopener noreferrer">
+                      <Button 
+                        variant="default" 
+                        className="font-orbitron hover:scale-105 transition-transform"
+                        style={{ backgroundColor: venture.color }}
+                      >
+                        Visit Website
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -182,7 +194,10 @@ const Ventures = () => {
 
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm py-12 px-6">
-        <div className="mx-auto max-w-7xl text-center">
+        <div className="mx-auto max-w-7xl text-center space-y-4">
+          <a href="mailto:ebaykurt@folky.info" className="text-muted-foreground hover:text-primary transition-colors">
+            ebaykurt@folky.info
+          </a>
           <p className="text-muted-foreground">
             © {new Date().getFullYear()} Folky Studio. All rights reserved.
           </p>

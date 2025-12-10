@@ -13,6 +13,7 @@ const ventures = [
     color: "hsl(250, 80%, 65%)",
     fullDescription: "SunnySett is our flagship AI platform that democratizes access to machine learning. We provide a curated marketplace of pre-trained models spanning computer vision, NLP, time-series forecasting, and more. Users can fine-tune models with their own data through an intuitive no-code interface, deploy instantly to cloud or edge devices, and scale seamlessly. Our mission: make cutting-edge AI accessible to every business, regardless of their technical expertise.",
     features: ["Model Marketplace", "No-Code Fine-Tuning", "One-Click Deployment", "Edge & Cloud Support", "API Integration"],
+    website: "https://sunnyset.com",
   },
   {
     name: "Safe Structure",
@@ -204,8 +205,8 @@ const Index = () => {
           </div>
           
           <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="transition-colors hover:text-primary">
-              Contact
+            <a href="mailto:ebaykurt@folky.info" className="transition-colors hover:text-primary">
+              ebaykurt@folky.info
             </a>
             <a href="#" className="transition-colors hover:text-primary">
               LinkedIn
