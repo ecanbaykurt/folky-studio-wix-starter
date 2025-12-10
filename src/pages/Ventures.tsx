@@ -12,7 +12,7 @@ const ventures = [
     fullDescription: "SunnySett is our flagship AI platform that democratizes access to machine learning. We provide a curated marketplace of pre-trained models spanning computer vision, NLP, time-series forecasting, and more. Users can fine-tune models with their own data through an intuitive no-code interface, deploy instantly to cloud or edge devices, and scale seamlessly. Our mission: make cutting-edge AI accessible to every business, regardless of their technical expertise.",
     features: ["Model Marketplace", "No-Code Fine-Tuning", "One-Click Deployment", "Edge & Cloud Support", "API Integration"],
     icon: "🤖",
-    website: "https://sunnyset.com",
+    website: "https://sunnysett.com",
   },
   {
     name: "Safe Structure",
