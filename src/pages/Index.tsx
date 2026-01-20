@@ -137,15 +137,49 @@ const Index = () => {
 
       {/* About Section */}
       <section className="relative py-24 px-6">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           <h2 className="mb-6 text-4xl font-bold md:text-5xl font-orbitron">
             About <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Folky Studio</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground leading-relaxed md:text-xl">
+          <p className="text-lg text-muted-foreground leading-relaxed md:text-xl mb-12">
             Folky Studio is more than an incubator—it's a creative lab where technology meets purpose. 
             Our Innovate IO Bootcamp nurtures projects from spark to scale, turning bold AI/ML ideas into 
             real-world platforms that save lives, empower communities, and shape industries.
+          </p>
+
+          {/* From Automation to Real-World Platforms */}
+          <div className="glass-effect rounded-2xl p-8 border border-purple-500/20 mb-8">
+            <h3 className="text-2xl font-bold mb-6 font-orbitron">
+              From <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Automation</span> to Real-World Impact
+            </h3>
+            <div className="grid gap-6 md:grid-cols-3 text-left">
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/40 transition-all">
+                <div className="text-3xl mb-3">🏗️</div>
+                <h4 className="font-semibold text-white mb-2">Infrastructure Monitoring</h4>
+                <p className="text-sm text-muted-foreground">
+                  AI-powered sensors analyze structural health in real-time, deployed across municipal buildings and bridges via <span className="text-emerald-400">Safe Structure</span>.
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/40 transition-all">
+                <div className="text-3xl mb-3">🏥</div>
+                <h4 className="font-semibold text-white mb-2">Healthcare Intelligence</h4>
+                <p className="text-sm text-muted-foreground">
+                  Predictive models optimize hospital resources and track outbreaks, integrated into clinical workflows through <span className="text-rose-400">HealthLine</span>.
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/40 transition-all">
+                <div className="text-3xl mb-3">🌊</div>
+                <h4 className="font-semibold text-white mb-2">Climate Resilience</h4>
+                <p className="text-sm text-muted-foreground">
+                  Satellite data + ML forecasting powers early warning systems for communities worldwide via <span className="text-sky-400">FloodTrack</span>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-muted-foreground text-sm italic">
+            Every automation we build is designed to ship—not sit in a lab.
           </p>
         </div>
       </section>
