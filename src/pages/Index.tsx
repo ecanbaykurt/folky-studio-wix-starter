@@ -118,7 +118,7 @@ const Index = () => {
           </div>
           
           <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            We transform ambitious ideas into scalable AI/ML solutions across safety, climate, health, and education.
+            We transform advanced artificial intelligence into real products across infrastructure, climate resilience, and intelligent systems.
           </p>
           
           <Link to="/ventures">
