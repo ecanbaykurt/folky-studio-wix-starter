@@ -223,14 +223,14 @@ const Index = () => {
             <a href="mailto:ebaykurt@folky.info" className="transition-colors hover:text-primary">
               ebaykurt@folky.info
             </a>
+            <Link to="/blog" className="transition-colors hover:text-primary">
+              Blog
+            </Link>
             <a href="#" className="transition-colors hover:text-primary">
               LinkedIn
             </a>
             <a href="#" className="transition-colors hover:text-primary">
               Twitter
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
-              Newsletter Signup
             </a>
           </div>
           
