@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { VentureCard } from "@/components/VentureCard";
 import { MusicControls } from "@/components/MusicControls";
+import { ContactForm } from "@/components/ContactForm";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const ventures = [
@@ -188,26 +189,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-24 px-6">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="glass-effect rounded-3xl p-12 shadow-2xl border border-purple-500/20">
-            <h2 className="mb-6 text-4xl font-bold md:text-5xl font-orbitron">
-              Join the <span className="bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 bg-clip-text text-transparent">Innovate IO</span> Movement
-            </h2>
+      {/* Contact Section */}
+      <section id="contact" className="relative py-24 px-6">
+        <div className="mx-auto max-w-4xl">
+          <div className="glass-effect rounded-3xl p-8 md:p-12 shadow-2xl border border-purple-500/20">
+            <div className="text-center mb-10">
+              <h2 className="mb-4 text-4xl font-bold md:text-5xl font-orbitron">
+                Get in <span className="bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 bg-clip-text text-transparent">Touch</span>
+              </h2>
+              <p className="text-lg text-muted-foreground md:text-xl">
+                Whether you're an investor, partner, or future innovator, we'd love to hear from you.
+              </p>
+            </div>
             
-            <p className="mb-10 text-lg text-muted-foreground md:text-xl">
-              Whether you're an investor, partner, or future innovator, we welcome you to explore, 
-              collaborate, and co-create with us.
-            </p>
-            
-            <Button 
-              variant="hero"
-              size="lg"
-              className="text-lg font-semibold px-12 py-6 h-auto bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600"
-            >
-              Get in Touch
-            </Button>
+            <ContactForm />
           </div>
         </div>
       </section>
