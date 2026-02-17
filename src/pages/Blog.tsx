@@ -3,69 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const blogPosts = [
-  {
-    id: "ai-infrastructure-safety",
-    title: "How AI is Revolutionizing Infrastructure Safety Assessment",
-    excerpt: "Discover how machine learning algorithms are transforming the way we monitor and predict structural integrity in buildings and bridges.",
-    category: "Infrastructure",
-    author: "Folky Team",
-    date: "2025-01-25",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop",
-  },
-  {
-    id: "climate-resilience-ai",
-    title: "Building Climate Resilience with Predictive AI Models",
-    excerpt: "Learn how FloodTrack uses satellite data and AI forecasting to help communities prepare for climate challenges.",
-    category: "Climate Tech",
-    author: "Folky Team",
-    date: "2025-01-20",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1569163139599-0f4517e36f51?w=800&h=400&fit=crop",
-  },
-  {
-    id: "democratizing-ai-education",
-    title: "Democratizing AI: Making Machine Learning Accessible to Everyone",
-    excerpt: "Explore how Nodes is breaking down barriers in AI education through interactive, visual learning experiences.",
-    category: "Education",
-    author: "Folky Team",
-    date: "2025-01-15",
-    readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop",
-  },
-  {
-    id: "hvac-design-future",
-    title: "The Future of HVAC Design: AI-Powered Collaboration",
-    excerpt: "See how Cosync is transforming mechanical engineering with real-time 3D collaboration and AI optimization.",
-    category: "Engineering",
-    author: "Folky Team",
-    date: "2025-01-10",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=400&fit=crop",
-  },
-  {
-    id: "healthcare-ai-insights",
-    title: "Transforming Healthcare with Data-Driven Insights",
-    excerpt: "How HealthLine is using predictive models to improve community health outcomes and optimize hospital resources.",
-    category: "Healthcare",
-    author: "Folky Team",
-    date: "2025-01-05",
-    readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=400&fit=crop",
-  },
-  {
-    id: "custom-ai-models",
-    title: "Why Custom AI Models Matter for Your Business",
-    excerpt: "Understanding the power of tailored machine learning solutions with SunnySett's model marketplace.",
-    category: "AI/ML",
-    author: "Folky Team",
-    date: "2024-12-28",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-  },
-];
+import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   return (
@@ -102,9 +40,9 @@ const Blog = () => {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {blogPosts.map((post) => (
+              <Link key={post.id} to={`/blog/${post.id}`} className="block">
               <Card 
-                key={post.id} 
-                className="group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                className="group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 cursor-pointer h-full"
               >
                 <div className="aspect-video overflow-hidden">
                   <img 
@@ -130,7 +68,7 @@ const Blog = () => {
                   <div className="flex items-center gap-4 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <User className="h-3 w-3" />
-                      {post.author}
+                      {post.author.name}
                     </span>
                     <span className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
@@ -143,6 +81,7 @@ const Blog = () => {
                   </div>
                 </CardContent>
               </Card>
+              </Link>
             ))}
           </div>
         </div>
