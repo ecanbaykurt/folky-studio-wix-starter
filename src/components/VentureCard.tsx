@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import { hslWithAlpha } from "@/lib/utils";
 import { X } from "lucide-react";
 
 interface VentureCardProps {
@@ -38,7 +39,7 @@ export const VentureCard = ({ name, headline, description, color, fullDescriptio
           <div 
             className="mb-4 inline-block rounded-lg px-3 py-1 text-sm font-semibold transition-all duration-300 font-orbitron"
             style={{ 
-              backgroundColor: `${color}20`,
+              backgroundColor: hslWithAlpha(color, 0.2),
               color: color,
             }}
           >
@@ -69,7 +70,7 @@ export const VentureCard = ({ name, headline, description, color, fullDescriptio
             <div 
               className="mb-2 inline-block rounded-lg px-4 py-2 text-sm font-semibold font-orbitron w-fit"
               style={{ 
-                backgroundColor: `${color}20`,
+                backgroundColor: hslWithAlpha(color, 0.2),
                 color: color,
               }}
             >
@@ -94,9 +95,9 @@ export const VentureCard = ({ name, headline, description, color, fullDescriptio
                     key={index}
                     className="px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105"
                     style={{ 
-                      backgroundColor: `${color}15`,
+                      backgroundColor: hslWithAlpha(color, 0.15),
                       color: color,
-                      border: `1px solid ${color}30`,
+                      border: `1px solid ${hslWithAlpha(color, 0.3)}`,
                     }}
                   >
                     {feature}

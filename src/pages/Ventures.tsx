@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/Navbar";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ventures } from "@/data/ventures";
+import { hslWithAlpha } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 
 const Ventures = () => {
@@ -37,7 +38,7 @@ const Ventures = () => {
               <div className="flex-shrink-0 w-full lg:w-5/12">
                 <div
                   className={`rounded-2xl overflow-hidden border border-border/50 shadow-2xl`}
-                  style={{ boxShadow: `0 25px 50px -12px ${venture.color}30` }}
+                  style={{ boxShadow: `0 25px 50px -12px ${hslWithAlpha(venture.color, 0.3)}` }}
                 >
                   <img
                     src={venture.image}
@@ -53,7 +54,7 @@ const Ventures = () => {
                 <div>
                   <div
                     className="inline-block rounded-lg px-4 py-1.5 text-sm font-bold font-orbitron mb-3"
-                    style={{ backgroundColor: `${venture.color}20`, color: venture.color }}
+                    style={{ backgroundColor: hslWithAlpha(venture.color, 0.2), color: venture.color }}
                   >
                     {venture.name}
                   </div>
@@ -85,9 +86,9 @@ const Ventures = () => {
                         key={cap}
                         className="px-3 py-1.5 rounded-full text-xs font-medium"
                         style={{
-                          backgroundColor: `${venture.color}15`,
+                          backgroundColor: hslWithAlpha(venture.color, 0.15),
                           color: venture.color,
-                          border: `1px solid ${venture.color}30`,
+                          border: `1px solid ${hslWithAlpha(venture.color, 0.3)}`,
                         }}
                       >
                         {cap}

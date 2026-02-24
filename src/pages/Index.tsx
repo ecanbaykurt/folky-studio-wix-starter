@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Navbar } from "@/components/Navbar";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ventures, type Venture, type VentureCategory } from "@/data/ventures";
+import { hslWithAlpha } from "@/lib/utils";
 import {
   ArrowRight,
   ExternalLink,
@@ -76,7 +77,7 @@ function PortfolioCard({
         </span>
         <span
           className="rounded-md px-2 py-0.5 text-xs font-medium"
-          style={{ backgroundColor: `${venture.color}20`, color: venture.color }}
+          style={{ backgroundColor: hslWithAlpha(venture.color, 0.2), color: venture.color }}
         >
           {venture.stage === "Live" ? t.ventures.stageLive : venture.stage === "Beta" ? t.ventures.stageBeta : t.ventures.stageRnd}
         </span>
