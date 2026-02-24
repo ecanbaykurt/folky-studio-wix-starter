@@ -11,7 +11,7 @@ const Blog = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
 
       {/* Hero Section */}
@@ -32,7 +32,9 @@ const Blog = () => {
       <section className="pb-24 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogPosts.map((post) => (
+            {[...blogPosts]
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map((post) => (
               <Link key={post.id} to={`/blog/${post.id}`} className="block">
                 <Card className="group overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 cursor-pointer h-full">
                   <div className="aspect-video overflow-hidden">
@@ -80,7 +82,7 @@ const Blog = () => {
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="mb-4 text-2xl font-bold font-orbitron">{t.blog.cta}</h2>
           <p className="mb-8 text-muted-foreground">{t.blog.ctaSub}</p>
-          <Link to="/ventures">
+          <Link to="/#portfolio">
             <Button variant="hero" size="lg">{t.blog.viewVentures}</Button>
           </Link>
         </div>

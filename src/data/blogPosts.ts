@@ -17,6 +17,174 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "scriptface-venture-engine",
+    title: "From Idea to Launch in Minutes: Inside ScriptFace",
+    excerpt: "How ScriptFace's 6-agent AI pipeline turns any project file into a web app, pitch deck, and marketing hub—no coding required.",
+    content: `
+      <h2>The Builder's Dilemma</h2>
+      <p>Every founder knows the drill: you have a prototype or a README, and suddenly you need a landing page, an investor deck, and a go-to-market plan. That used to mean weeks of work and hiring freelancers or agencies. ScriptFace, a Folky Studio venture, compresses that path into minutes.</p>
+      <h2>One Upload, Full Launch System</h2>
+      <p>Upload any code file, project folder, README, or concept note. ScriptFace's AI extracts intent and generates a complete launch system: a 3-in-1 web app (conversion-optimized landing, functional tool page, investor storytelling page), a professional pitch deck (PDF, PPTX, JSON), and a marketing hub with social content, email campaigns, SEO, and GTM strategy.</p>
+      <h2>The 6-Agent Pipeline</h2>
+      <p>Under the hood, a 6-agent AI pipeline handles code understanding, product suggestions, system architecture, UX generation, code generation, and deployment. Multi-framework support—Tailwind, Material UI, Bootstrap, Chakra—and one-click GitHub setup mean you get a production-ready footprint without writing a line of code.</p>
+      <h2>Who It's For</h2>
+      <p>Solo founders, non-technical founders, engineers, and startup teams use ScriptFace to validate and launch faster. The result: weeks of setup become minutes, and you ship a market-ready product system instead of a single prototype.</p>
+      <p><a href="https://scriptface.dev" target="_blank" rel="noopener noreferrer" class="underline text-primary hover:opacity-80">Try ScriptFace →</a></p>
+    `,
+    category: "Builder",
+    author: {
+      name: "Folky Team",
+      avatar: "https://ui-avatars.com/api/?name=Folky+Team&background=6366f1&color=fff",
+      bio: "Folky Studio is an AI venture studio building intelligent solutions for real-world challenges.",
+    },
+    date: "2025-02-20",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+    tags: ["ScriptFace", "Startups", "AI", "No-Code"],
+  },
+  {
+    id: "safestructure-30-second-safety",
+    title: "SafeStructure: AI Building Safety in 30 Seconds",
+    excerpt: "Upload a photo and get structural and environmental risk analysis in about 30 seconds. No registration required.",
+    content: `
+      <h2>Beyond Manual Inspections</h2>
+      <p>Structural assessments have traditionally been slow and expensive. SafeStructure, a Folky Studio venture, flips that: upload a structural photo and receive detailed safety analysis with environmental risk assessment in about 30 seconds. No sign-up required to get started.</p>
+      <h2>SafeVision AI and Environmental Risk</h2>
+      <p>Enhanced SafeVision AI uses advanced vision intelligence to analyze building photos for structural safety, damage detection, and professional recommendations. Set a property location to enable environmental risk: flood zones, seismic activity, climate patterns, and natural disaster factors. You get comprehensive risk scoring, insurance and compliance checking, cost estimates, and actionable recommendations.</p>
+      <h2>Concrete, Steel, Wood—and More</h2>
+      <p>Analysis covers concrete, steel, and wood elements plus flood, seismic, and climate risks. The first 1,000 analyses are free; premium features add history, enhanced reports, and professional insights. Trusted by thousands of users with 30-second average turnaround and 24/7 uptime.</p>
+      <p><a href="https://safestructure.tech" target="_blank" rel="noopener noreferrer" class="underline text-primary hover:opacity-80">Try SafeStructure →</a></p>
+    `,
+    category: "Infrastructure",
+    author: {
+      name: "Folky Team",
+      avatar: "https://ui-avatars.com/api/?name=Folky+Team&background=6366f1&color=fff",
+      bio: "Folky Studio is an AI venture studio building intelligent solutions for real-world challenges.",
+    },
+    date: "2025-02-18",
+    readTime: "3 min read",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=400&fit=crop",
+    tags: ["SafeStructure", "AI", "Safety", "Infrastructure"],
+  },
+  {
+    id: "sunnysight-codebase-governance",
+    title: "SunnySight: See Your Codebase and AI Governance Clearly",
+    excerpt: "Engineering teams use SunnySight to get architecture health, technical debt hotspots, and AI model governance from GitHub repos.",
+    content: `
+      <h2>When Code and AI Scale Together</h2>
+      <p>As teams ship more features and integrate more AI, codebase health and AI governance become critical. SunnySight, a Folky Studio venture, gives engineering teams deep visibility into both: analyze GitHub repositories for architecture evaluations, dependency and quality metrics, and technical debt hotspots.</p>
+      <h2>AI Model Governance and Team Efficiency</h2>
+      <p>Track AI model usage and governance so systems stay auditable and responsible. Measure team efficiency and delivery patterns. Engineering managers get dashboards and recommendations to improve code quality, optimize workflows, and ensure AI is deployed with clear ownership and safety.</p>
+      <h2>One Place for Health and Readiness</h2>
+      <p>SunnySight is built for AI-native and product teams that want one place to see codebase health and AI readiness. Reduce risk and improve long-term maintainability while shipping faster and more responsibly.</p>
+    `,
+    category: "Infrastructure",
+    author: {
+      name: "Folky Team",
+      avatar: "https://ui-avatars.com/api/?name=Folky+Team&background=6366f1&color=fff",
+      bio: "Folky Studio is an AI venture studio building intelligent solutions for real-world challenges.",
+    },
+    date: "2025-02-15",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop",
+    tags: ["SunnySight", "DevOps", "AI Governance", "GitHub"],
+  },
+  {
+    id: "bestmentee-mentorship-scale",
+    title: "BestMentee: Scaling Mentorship Across 70+ Universities",
+    excerpt: "How BestMentee connects mentors and mentees across cohorts and partners like TPF, NETSA, and Turkish Hub.",
+    content: `
+      <h2>Mentorship at Scale</h2>
+      <p>Quality mentorship is one of the highest-leverage ways to advance careers—but matching the right mentors and mentees and keeping conversations structured is hard. BestMentee, a Folky Studio venture, is built for meaningful connections and impact across 70+ universities and partner ecosystems.</p>
+      <h2>Expert Mentors, Secure Messaging, Social Hub</h2>
+      <p>Expert mentors are matched with talented mentees within cohorts or across the community. Secure 1-1 messaging keeps conversations private with no spam or random outreach. The Social Hub centralizes community posts, events, and updates. The platform is built in partnership with Turkish Philanthropy Funds (TPF), New England Turkish Student Association (NETSA), and Turkish Hub.</p>
+      <h2>Free to Join, Built for Impact</h2>
+      <p>Account creation is free; data is secure and not shared with third parties. Whether you want to find a mentor, become a mentor, or engage in the Social Hub, BestMentee is designed for graduates and professionals who want to give back or grow through structured mentorship.</p>
+      <p><a href="https://bestmentee.com" target="_blank" rel="noopener noreferrer" class="underline text-primary hover:opacity-80">Join BestMentee →</a></p>
+    `,
+    category: "Education",
+    author: {
+      name: "Folky Team",
+      avatar: "https://ui-avatars.com/api/?name=Folky+Team&background=6366f1&color=fff",
+      bio: "Folky Studio is an AI venture studio building intelligent solutions for real-world challenges.",
+    },
+    date: "2025-02-12",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=400&fit=crop",
+    tags: ["BestMentee", "Mentorship", "Community", "Education"],
+  },
+  {
+    id: "agentblueprint-design-without-code",
+    title: "AgentBlueprint: Design Agent Workflows Without Code",
+    excerpt: "Turn your idea into a secure, cost-efficient agent blueprint in ~10 minutes. Design in the cloud, run on OpenClaw.",
+    content: `
+      <h2>From Idea to Blueprint in Minutes</h2>
+      <p>Agent systems are powerful but designing and managing them has often required deep technical work. AgentBlueprint, a Folky Studio venture, is the complementary layer to OpenClaw: design and manage agent blueprints in the cloud, run them via Run API or OpenClaw CLI. Use the wizard to describe your idea; the system produces a full blueprint with agent count, flow, cost, and security summary.</p>
+      <h2>Cost, Security, and Flow</h2>
+      <p>Get per-run and monthly cost estimates, per-agent breakdowns, and optimization suggestions. Security and access are allowlist-based with risks and controls in plain language, plus audit log and versioning. A visual flow map lets you edit the agent flow and export to React Flow. Run logs track step-by-step execution, cost, and token usage.</p>
+      <h2>Export and OpenClaw Integration</h2>
+      <p>Export to OpenClaw-compatible CLI, Run API, JSON, or Markdown; optionally connect a GitHub repo. Use Run API as a tool from OpenClaw. No coding required—bridge idea to execution for agent systems in one place.</p>
+      <p><a href="https://agentica.vercel.app" target="_blank" rel="noopener noreferrer" class="underline text-primary hover:opacity-80">Create your Blueprint →</a></p>
+    `,
+    category: "AI/ML",
+    author: {
+      name: "Folky Team",
+      avatar: "https://ui-avatars.com/api/?name=Folky+Team&background=6366f1&color=fff",
+      bio: "Folky Studio is an AI venture studio building intelligent solutions for real-world challenges.",
+    },
+    date: "2025-02-10",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=400&fit=crop",
+    tags: ["AgentBlueprint", "AI Agents", "OpenClaw", "No-Code"],
+  },
+  {
+    id: "cosync-hackathon-winner",
+    title: "CoSync Wins 2nd Place at 2025 Dream AI Hackathon",
+    excerpt: "Our multi-agent construction platform took 2nd place at LikeLion US's Dream AI Hackathon. Here's what the judges said.",
+    content: `
+      <h2>Design with Your AI Structural Consultant</h2>
+      <p>CoSync is Folky Studio's multi-agent construction platform: immersive 3D building models, real-time collaboration, walk-through mode, X-ray vision, smart measurements, and AI issue detection. In February 2025, CoSync earned 2nd place at the prestigious Dream AI Hackathon hosted by LikeLion US, competing against 189+ innovative AI projects from around the world.</p>
+      <h2>What the Judges Said</h2>
+      <p>"CoSync represents the future of construction coordination, powered by a team of architects, structural, and mechanical engineers who bring deep domain expertise and firsthand understanding of the industry's challenges." — Hackathon Judges.</p>
+      <h2>Next: Smart Field Companion</h2>
+      <p>CoSync is built for dynamic construction teams with offline capabilities, real-time sync, and touch-optimized 3D navigation. Coming soon: Smart Field Companion on iOS and Android for the full native experience. Join the beta waitlist and stay tuned.</p>
+      <p><a href="https://cosync.info" target="_blank" rel="noopener noreferrer" class="underline text-primary hover:opacity-80">Visit CoSync →</a></p>
+    `,
+    category: "Engineering",
+    author: {
+      name: "Folky Team",
+      avatar: "https://ui-avatars.com/api/?name=Folky+Team&background=6366f1&color=fff",
+      bio: "Folky Studio is an AI venture studio building intelligent solutions for real-world challenges.",
+    },
+    date: "2025-02-08",
+    readTime: "3 min read",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=400&fit=crop",
+    tags: ["CoSync", "Hackathon", "Construction", "3D"],
+  },
+  {
+    id: "sunnyfin-trading-risk-radar",
+    title: "SunnyFin: AI-Powered Trading and Portfolio Risk Radar",
+    excerpt: "Real-time charts, LSTM and Transformer predictions, model testing, and a Risk Radar for financial health—all in one platform.",
+    content: `
+      <h2>Multi-Model AI for Trading and Prediction</h2>
+      <p>SunnyFin, a Folky Studio venture, combines real-time trading charts with multiple AI prediction models: LSTM, GRU, Transformer, XGBoost, GARCH, and Reinforcement Learning. Test and compare models in simulation, run automatic trading, and use the Portfolio Risk Radar for financial health insights.</p>
+      <h2>Trading View and Model Testing</h2>
+      <p>The Trading view offers candlestick charts with model predictions, technical indicators (EMA, Bollinger Bands, VWAP), and a watchlist. The Model Testing & Simulation Platform lets you run simulations with starting capital, trading frequency, and multiple AI models with accuracy and MSE metrics.</p>
+      <h2>Risk Radar and Stock Screener</h2>
+      <p>The Portfolio Risk Radar & Stock Screener provides sortable financial ratios—P/E, ROE, Debt/Equity, Profit Margin, Market Cap—and health scores. Built for clarity and confidence: cost control, allowlist-based security, audit logs, and export to JSON or Markdown.</p>
+    `,
+    category: "AI/ML",
+    author: {
+      name: "Folky Team",
+      avatar: "https://ui-avatars.com/api/?name=Folky+Team&background=6366f1&color=fff",
+      bio: "Folky Studio is an AI venture studio building intelligent solutions for real-world challenges.",
+    },
+    date: "2025-02-05",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop",
+    tags: ["SunnyFin", "Trading", "AI", "Finance"],
+  },
+  {
     id: "ai-infrastructure-safety",
     title: "How AI is Revolutionizing Infrastructure Safety Assessment",
     excerpt: "Discover how machine learning algorithms are transforming the way we monitor and predict structural integrity in buildings and bridges.",
@@ -27,7 +195,7 @@ export const blogPosts: BlogPost[] = [
 
       <h2>Enter AI-Powered Monitoring</h2>
       <p>Machine learning algorithms are changing the game. By analyzing sensor data, satellite imagery, and historical maintenance records, AI systems can now predict structural failures weeks or even months before they occur. These systems continuously learn from new data, improving their accuracy over time.</p>
-      <p>At Folky Studio, our venture <strong>StructureGuard</strong> leverages computer vision and deep learning to analyze images of infrastructure components. The system can detect hairline cracks, corrosion patterns, and deformation that would be invisible to the naked eye.</p>
+      <p>At Folky Studio, our venture <strong>SafeStructure</strong> leverages computer vision and deep learning to analyze images of infrastructure components. The system can detect hairline cracks, corrosion patterns, and deformation that would be invisible to the naked eye.</p>
 
       <h2>How It Works</h2>
       <p>The process begins with data collection. Drones equipped with high-resolution cameras capture thousands of images of a structure. These images are then fed into our neural network, which has been trained on millions of labeled examples of structural damage.</p>
@@ -147,6 +315,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Sustainability Impact</h2>
       <p>Buildings are responsible for approximately 30% of global greenhouse gas emissions, and HVAC systems are a major contributor. By optimizing these systems, Cosync is helping the built environment industry move toward its decarbonization goals.</p>
       <p>We're currently developing features for integrating renewable energy sources, thermal storage systems, and advanced heat recovery technologies into the optimization engine.</p>
+      <p><a href="https://cosync.info" target="_blank" rel="noopener noreferrer" class="underline text-primary hover:opacity-80">← Back to CoSync project (cosync.info)</a></p>
     `,
     category: "Engineering",
     author: {

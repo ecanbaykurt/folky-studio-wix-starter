@@ -13,7 +13,7 @@ interface ContactRequest {
   name: string;
   email: string;
   company?: string;
-  type: "investor" | "partner" | "other";
+  type: "investor" | "founder" | "partner" | "press" | "general";
   message: string;
 }
 
@@ -45,17 +45,19 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Input exceeds maximum length");
     }
 
-    const typeLabels = {
-      investor: "Investor Inquiry",
-      partner: "Partnership Opportunity",
-      other: "General Inquiry",
+    const typeLabels: Record<ContactRequest["type"], string> = {
+      investor: "Investor",
+      founder: "Founder",
+      partner: "Municipality or Partner",
+      press: "Press",
+      general: "General",
     };
 
     console.log("Sending contact email from:", name, email, "Type:", type);
 
     const emailResponse = await resend.emails.send({
       from: "Folky Studio Contact <onboarding@resend.dev>",
-      to: ["ebaykurt@folky.info"],
+      to: ["ebaykurt@bu.edu"],
       replyTo: email,
       subject: `[${typeLabels[type]}] New Contact from ${name}`,
       html: `

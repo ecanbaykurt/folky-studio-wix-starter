@@ -9,7 +9,7 @@ const Ventures = () => {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
 
       {/* Hero */}
@@ -137,8 +137,8 @@ const Ventures = () => {
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm py-12 px-6">
         <div className="mx-auto max-w-7xl text-center space-y-4">
-          <a href="mailto:ebaykurt@folky.info" className="text-muted-foreground hover:text-primary transition-colors">
-            ebaykurt@folky.info
+          <a href="mailto:ebaykurt@bu.edu" className="text-muted-foreground hover:text-primary transition-colors">
+            ebaykurt@bu.edu
           </a>
           <p className="text-muted-foreground">
             © {new Date().getFullYear()} Folky Studio. {t.footer.rights}

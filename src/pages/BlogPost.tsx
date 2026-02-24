@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Calendar, Clock, User, Share2, Twitter, Linkedin } from "lucide-react";
+import { Calendar, Clock, Twitter, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,12 +8,15 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Progress } from "@/components/ui/progress";
 import { Navbar } from "@/components/Navbar";
 import { getPostById, getRelatedPosts } from "@/data/blogPosts";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const BlogPost = () => {
   const { postId } = useParams<{ postId: string }>();
+  const { lang, t } = useLanguage();
   const [scrollProgress, setScrollProgress] = useState(0);
   const post = postId ? getPostById(postId) : undefined;
   const relatedPosts = post ? getRelatedPosts(post.id, post.category) : [];
+  const dateLocale = lang === "tr" ? "tr-TR" : "en-US";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,11 +34,11 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
+          <h1 className="text-4xl font-bold mb-4">{t.blog.postNotFound}</h1>
           <Link to="/blog">
-            <Button variant="hero">Back to Blog</Button>
+            <Button variant="hero">{t.blog.backToBlog}</Button>
           </Link>
         </div>
       </div>
@@ -45,7 +48,7 @@ const BlogPost = () => {
   const shareUrl = `https://folky-studio-wix-starter.lovable.app/blog/${post.id}`;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       {/* Reading Progress */}
       <div className="fixed top-0 left-0 right-0 z-[60]">
         <Progress value={scrollProgress} className="h-1 rounded-none bg-transparent" />
@@ -77,7 +80,7 @@ const BlogPost = () => {
             </Avatar>
             <span>{post.author.name}</span>
           </div>
-          <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+          <span className="flex items-center gap-1"><Calendar className="h-3.5 w-3.5" />{new Date(post.date).toLocaleDateString(dateLocale, { month: "long", day: "numeric", year: "numeric" })}</span>
           <span className="flex items-center gap-1"><Clock className="h-3.5 w-3.5" />{post.readTime}</span>
           <div className="flex items-center gap-2 ml-auto">
             <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Twitter className="h-4 w-4" /></a>
@@ -118,7 +121,7 @@ const BlogPost = () => {
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <section className="mx-auto max-w-3xl px-6 pb-16">
-          <h2 className="text-2xl font-bold font-orbitron mb-6">Related Articles</h2>
+          <h2 className="text-2xl font-bold font-orbitron mb-6">{t.blog.relatedArticles}</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {relatedPosts.map((rp) => (
               <Link key={rp.id} to={`/blog/${rp.id}`}>
@@ -139,7 +142,7 @@ const BlogPost = () => {
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm py-8 px-6">
         <div className="mx-auto max-w-7xl text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Folky Studio. All rights reserved.
+          © {new Date().getFullYear()} Folky Studio. {t.footer.rights}
         </div>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -17,17 +17,37 @@ import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Send, Loader2 } from "lucide-react";
 
+const inquiryTypes = [
+  { value: "investor", label: "Investor" },
+  { value: "founder", label: "Founder" },
+  { value: "partner", label: "Municipality or Partner" },
+  { value: "press", label: "Press" },
+  { value: "general", label: "General" },
+] as const;
+
+const inquiryHelperText: Record<string, string> = {
+  investor: "Share your interest in our portfolio or request a call with the team.",
+  founder: "Tell us about your project and how you would like to build with the studio.",
+  partner: "Describe your pilot or deployment goals and how we can collaborate.",
+  press: "We are happy to provide information and arrange interviews.",
+  general: "Send us a message and we will get back to you.",
+};
+
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
   company: z.string().trim().max(100, "Company name must be less than 100 characters").optional(),
-  type: z.enum(["investor", "partner", "other"], { required_error: "Please select an inquiry type" }),
+  type: z.enum(["investor", "founder", "partner", "press", "general"], { required_error: "Please select an inquiry type" }),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(5000, "Message must be less than 5000 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-export const ContactForm = () => {
+interface ContactFormProps {
+  onSuccess?: () => void;
+}
+
+export const ContactForm = ({ onSuccess }: ContactFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
@@ -46,6 +66,17 @@ export const ContactForm = () => {
 
   const selectedType = watch("type");
 
+  useEffect(() => {
+    const handler = (e: CustomEvent<string>) => {
+      const value = e.detail;
+      if (inquiryTypes.some((t) => t.value === value)) {
+        setValue("type", value as ContactFormData["type"]);
+      }
+    };
+    window.addEventListener("contact-inquiry-type", handler as EventListener);
+    return () => window.removeEventListener("contact-inquiry-type", handler as EventListener);
+  }, [setValue]);
+
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
@@ -56,16 +87,17 @@ export const ContactForm = () => {
       if (error) throw error;
 
       toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. We'll get back to you soon.",
+        title: "Message sent",
+        description: "Thank you for reaching out. We will get back to you soon.",
       });
 
       reset();
-    } catch (error: any) {
+      onSuccess?.();
+    } catch (error: unknown) {
       console.error("Contact form error:", error);
       toast({
         title: "Failed to send message",
-        description: "Please try again or email us directly at ebaykurt@folky.info",
+        description: "Please try again or email us directly at ebaykurt@bu.edu",
         variant: "destructive",
       });
     } finally {
@@ -122,17 +154,24 @@ export const ContactForm = () => {
           <Label htmlFor="type" className="text-foreground">Inquiry Type *</Label>
           <Select
             value={selectedType}
-            onValueChange={(value: "investor" | "partner" | "other") => setValue("type", value)}
+            onValueChange={(value: ContactFormData["type"]) => setValue("type", value)}
           >
             <SelectTrigger className="bg-card/50 border-border/50 focus:border-primary">
               <SelectValue placeholder="Select type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="investor">Investor Inquiry</SelectItem>
-              <SelectItem value="partner">Partnership Opportunity</SelectItem>
-              <SelectItem value="other">General Inquiry</SelectItem>
+              {inquiryTypes.map((t) => (
+                <SelectItem key={t.value} value={t.value}>
+                  {t.label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
+          {selectedType && inquiryHelperText[selectedType] && (
+            <p className="text-sm text-muted-foreground">
+              {inquiryHelperText[selectedType]}
+            </p>
+          )}
           {errors.type && (
             <p className="text-sm text-destructive">{errors.type.message}</p>
           )}

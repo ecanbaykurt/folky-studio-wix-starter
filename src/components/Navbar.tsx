@@ -4,6 +4,7 @@ import { LanguageToggle } from "./LanguageToggle";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   const { t } = useLanguage();
@@ -12,6 +13,7 @@ export const Navbar = () => {
 
   const links = [
     { to: "/", label: t.nav.home },
+    { to: "/about", label: t.nav.about },
     { to: "/ventures", label: t.nav.portfolio },
     { to: "/blog", label: t.nav.blog },
     { to: "/#contact", label: t.nav.contact },
@@ -24,24 +26,29 @@ export const Navbar = () => {
     }
   };
 
+  const isActive = (to: string) => {
+    if (to === "/#contact") return false;
+    return location.pathname === to;
+  };
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold font-orbitron bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-            Folky Studio
-          </span>
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/85 backdrop-blur-xl">
+      <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
+        <Link
+          to="/"
+          className="relative flex items-center gap-2 py-1 text-lg font-bold font-orbitron tracking-wide text-foreground after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+        >
+          Folky Studio
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {links.map((link) =>
             link.to === "/#contact" ? (
               <Link
                 key={link.to}
                 to="/"
                 onClick={handleContactClick}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="relative text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
               >
                 {link.label}
               </Link>
@@ -49,11 +56,12 @@ export const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm transition-colors ${
-                  location.pathname === link.to
-                    ? "text-foreground font-medium"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={cn(
+                  "relative text-sm transition-colors py-2",
+                  isActive(link.to)
+                    ? "text-foreground font-medium after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-primary/70 after:rounded-full after:shadow-[0_0_12px_hsl(var(--primary)/0.5)]"
+                    : "text-muted-foreground hover:text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:scale-x-0 after:bg-primary/50 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                )}
               >
                 {link.label}
               </Link>
@@ -63,16 +71,15 @@ export const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <LanguageToggle />
-          <Link to="/#contact">
-            <Button variant="outline" size="sm" className="font-orbitron text-xs" onClick={handleContactClick}>
+          <Link to="/#contact" onClick={handleContactClick}>
+            <Button variant="apply" size="sm" className="font-orbitron text-xs">
               {t.nav.apply}
             </Button>
           </Link>
         </div>
 
-        {/* Mobile */}
-        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <button className="md:hidden text-foreground p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
@@ -101,6 +108,9 @@ export const Navbar = () => {
           )}
           <div className="flex items-center gap-3 pt-2">
             <LanguageToggle />
+            <Button variant="apply" size="sm" onClick={handleContactClick}>
+              {t.nav.apply}
+            </Button>
           </div>
         </div>
       )}
