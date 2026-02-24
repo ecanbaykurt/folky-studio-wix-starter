@@ -88,16 +88,68 @@ const About = () => {
 
       {/* Founder section */}
       <section className="pb-20 px-6">
-        <div className="mx-auto max-w-4xl glass-effect rounded-3xl p-10 border border-border/60 bg-card/70 shadow-2xl space-y-4">
-          <h2 className="text-2xl md:text-3xl font-orbitron font-bold mb-2">
-            {t.about.founderTitle}
+        <div className="mx-auto max-w-4xl glass-effect rounded-3xl p-10 border border-border/60 bg-card/70 shadow-2xl">
+          <div className="flex flex-col md:flex-row md:items-start gap-8">
+            <div className="flex-shrink-0 flex justify-center md:justify-start">
+              <img
+                src="/emre-can-baykurt.png"
+                alt={t.about.founderName}
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-2 border-border/50 shadow-xl ring-2 ring-primary/20"
+              />
+            </div>
+            <div className="flex-1 space-y-4 min-w-0">
+              <h2 className="text-2xl md:text-3xl font-orbitron font-bold mb-2">
+                {t.about.founderTitle}
+              </h2>
+              <p className="text-sm font-orbitron uppercase tracking-[0.25em] text-primary/80">
+                {t.about.founderName} · {t.about.founderRole}
+              </p>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                {t.about.founderBioShort}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team, Advisors & Ecosystem */}
+      <section className="pb-20 px-6">
+        <div className="mx-auto max-w-4xl space-y-6">
+          <h2 className="text-2xl md:text-3xl font-orbitron font-bold text-center">
+            {t.about.teamAdvisorsTitle}
           </h2>
-          <p className="text-sm font-orbitron uppercase tracking-[0.25em] text-primary/80">
-            {t.about.founderName} · {t.about.founderRole}
+          <p className="text-sm md:text-base text-muted-foreground text-center max-w-2xl mx-auto leading-relaxed">
+            {t.about.teamAdvisorsIntro}
           </p>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            {t.about.founderBioShort}
-          </p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="glass-effect rounded-2xl p-8 border border-border/50 bg-card/60 shadow-xl">
+              <h3 className="text-lg font-orbitron font-bold text-foreground mb-3">
+                {lang === "tr" ? "Profesyonel danışmanlar" : "Professional advisors"}
+              </h3>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                {t.about.teamAdvisorsAdvisors}
+              </p>
+            </div>
+            <div className="glass-effect rounded-2xl p-8 border border-border/50 bg-card/60 shadow-xl">
+              <h3 className="text-lg font-orbitron font-bold text-foreground mb-3">
+                {lang === "tr" ? "Kurucu ekip arkadaşları" : "Co-founding teammates"}
+              </h3>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                {t.about.teamAdvisorsCofounders}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 pt-2">
+            <span className="rounded-full bg-primary/15 text-primary px-4 py-1.5 text-sm font-medium border border-primary/30">
+              MIT
+            </span>
+            <span className="rounded-full bg-primary/15 text-primary px-4 py-1.5 text-sm font-medium border border-primary/30">
+              Boston University
+            </span>
+            <span className="rounded-full bg-primary/15 text-primary px-4 py-1.5 text-sm font-medium border border-primary/30">
+              Harvard
+            </span>
+          </div>
         </div>
       </section>
 

@@ -127,6 +127,13 @@ export const translations = {
       founderRole: "Founder & Studio Lead",
       founderBioShort:
         "Folky Studio is led by E. Baykurt, an AI engineer and builder embedded in the MIT, BU, and Harvard startup ecosystem. Over the last six months, they have worked with 40+ startups across compute, healthcare, manufacturing, and construction—designing AI tools, agentic systems, and automation that plug into existing products. Their focus is turning experimental AI into reliable systems that ship quickly through workshops, consulting, and hands-on integration.",
+      teamAdvisorsTitle: "Team, Advisors & Ecosystem",
+      teamAdvisorsIntro:
+        "Folky is not built alone. Our strength comes from professional advisors and co-founding teammates rooted in MIT, Boston University, and Harvard—the same institutions where many of our ventures and partners are born.",
+      teamAdvisorsAdvisors:
+        "Professional advisors bring deep expertise in AI research, systems engineering, venture building, and go-to-market. They help us stress-test ideas, align with industry standards, and connect portfolio companies with the right talent and capital.",
+      teamAdvisorsCofounders:
+        "Co-founding teammates join from these ecosystems to build ventures hands-on: from product and ML pipelines to deployment and scale. Together we combine academic rigor with startup speed, so what we ship is both innovative and production-ready.",
     },
     ventures: {
       title: "Our Portfolio",
@@ -315,6 +322,13 @@ export const translations = {
       founderRole: "Kurucu ve Studio Lead",
       founderBioShort:
         "Folky Studio’nun liderliğini, MIT, Boston University ve Harvard girişim ekosistemine gömülü bir yapay zeka mühendisi ve builder olan E. Baykurt yürütüyor. Son 6 ayda compute’tan sağlığa, üretimden inşaata kadar 40’tan fazla startup ile çalışarak, mevcut ürünlere entegre edilen AI araçları, ajan tabanlı sistemler ve otomasyon çözümleri tasarladı. Odağı; workshop’lar, danışmanlık ve doğrudan entegrasyonla deneysel AI fikirlerini hızlıca üretim sistemlerine dönüştürmek.",
+      teamAdvisorsTitle: "Ekip, Danışmanlar ve Ekosistem",
+      teamAdvisorsIntro:
+        "Folky tek başına inşa edilmiyor. Gücümüz, MIT, Boston University ve Harvard kökenli profesyonel danışmanlar ve kurucu ekip arkadaşlarından geliyor—girişimlerimizin ve iş ortaklarımızın birçoğunun doğduğu aynı kurumlar.",
+      teamAdvisorsAdvisors:
+        "Profesyonel danışmanlar, yapay zeka araştırması, sistem mühendisliği, girişim kurma ve go-to-market alanlarında derin uzmanlık getiriyor. Fikirleri stress test etmemize, sektör standartlarıyla uyum sağlamamıza ve portföy şirketlerini doğru yetenek ve sermaye ile buluşturmamıza yardımcı oluyorlar.",
+      teamAdvisorsCofounders:
+        "Kurucu ekip arkadaşları bu ekosistemlerden gelerek girişimleri bizzat inşa ediyor: ürün ve ML pipeline'larından deploy ve ölçeğe kadar. Birlikte akademik titizliği startup hızıyla birleştiriyoruz; böylece ürettiğimiz hem yenilikçi hem de üretime hazır oluyor.",
     },
     ventures: {
       title: "Portföyümüz",
